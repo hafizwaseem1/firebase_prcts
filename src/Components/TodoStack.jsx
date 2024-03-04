@@ -1,22 +1,15 @@
-import React from 'react'
-
-const TodoStack = ({todo, deltodo, id , editTodo, UpdateTodo, editDocument, setEditDocument, isUpdating}) => {
-    
+const TodoStack = ({ todo, delTodo, editTodo }) => {
   return (
     <div>
-      <div className='stack'>
-        {todo}
-        <button onClick={deltodo}>Delete</button>
-        <button onClick={editTodo}>Edit</button>
+      <div className="stack">
+        <div>{todo}</div>
+        <div>
+          <button onClick={delTodo}>Delete</button>
+          <button onClick={editTodo}>Edit</button>
+        </div>
       </div>
-      {
-        isUpdating? <div>
-        <input type="text" value={editDocument} required onChange={(e)=> setEditDocument(e.target.value)} />
-        <button onClick={UpdateTodo}>Update Todo</button>
-      </div>: ''
-      } 
     </div>
-  )
-}
+  );
+};
 
-export default TodoStack
+export default TodoStack;  
